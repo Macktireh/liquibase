@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 30112024-01
+      author: Macktireh
+      changes:
+        - createTable:
+            tableName: COMMENTS
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: comments_pkey
+              - column:
+                  name: content
+                  type: TEXT
+              - column:
+                  name: post_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_comments_posts
+                    references: posts(id)
+                    deleteCascade: true

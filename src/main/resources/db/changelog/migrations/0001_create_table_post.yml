@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 30112024-01
+      author: Macktireh
+      changes:
+        - createTable:
+            tableName: POSTS
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: posts_pkey
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  name: content
+                  type: TEXT

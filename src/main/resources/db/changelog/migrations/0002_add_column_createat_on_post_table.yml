@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 30112024-02
+      author: Macktireh
+      changes:
+        - addColumn:
+            tableName: POSTS
+            columns:
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
